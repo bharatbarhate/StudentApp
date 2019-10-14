@@ -1,0 +1,21 @@
+package com.crm.qa.util;
+
+import org.testng.Reporter;
+
+import com.crm.qa.base.TestBase;
+
+public class TestUtil extends TestBase{
+	
+	public static long PAGE_LOAD_TIMEOUT=20;
+	public static long IMPLICIT_WAIT = 10;
+	
+	public void switchToFrame(String FrameName) {
+		
+		if(!FrameName.isEmpty())
+		driver.switchTo().frame(FrameName);
+		else
+		{
+			Reporter.log("Frame "+FrameName+" is not available");
+		}
+	}
+}
